@@ -1,0 +1,2 @@
+anpther example of writing to a file.
+Writing to files in RUBY is simple.Here is a third line of text.Here is a third line of text.
