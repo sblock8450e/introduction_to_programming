@@ -5,32 +5,19 @@ contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],
 
 contacts = {"Joe Smith" => {}, "Sally Johnson" => {}}
 
-contact_data_name = ""
-contacts_name = ""
-contacts_fname = ""
-
 p "Original Contacts Hash: "
 p contacts 
 p " "
 
-contacts.each do |key, value|
+contacts["Joe Smith"][:email] = contact_data[0][0]
+contacts["Joe Smith"][:address] = contact_data[0][1]
+contacts["Joe Smith"][:phone] = contact_data[0][2]
+
+contacts["Sally Johnson"][:email] = contact_data[1][0]
+contacts["Sally Johnson"][:address] = contact_data[1][1]
+contacts["Sally Johnson"][:phone] = contact_data[1][2]
+
+p "Updated Contacts Hash: "
+p contacts 
+p " "
   
-  contacts_name = key
-  contacts_fname = (key.to_s.downcase).split(" ")[0]
-  p contacts_name
-  p contacts_fname
-  p " "
-  
-  contact_data.each { |arr|
-    if arr.first.include?(contacts_fname)
-      contacts[contacts_name][:email] = arr[0].to_s
-      contacts[contacts_name][:address] = arr[1].to_s
-      contacts[contacts_name][:phone] = arr[2].to_s
-    end
-  } 
-  
-  p "Updated Contacts Hash: "
-  p contacts 
-  p " "
-  
-end
